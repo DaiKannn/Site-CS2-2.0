@@ -1,0 +1,30 @@
+{
+    "mirage": {
+      "smokes": {
+        "T": [
+          { "title": "Smoke Window", "url": "videos/mirage/smoke_t_window.mp4" },
+          { "title": "Smoke Jungle", "url": "videos/mirage/smoke_t_jungle.mp4" }
+        ],
+        "CT": [
+          { "title": "Smoke Top Mid", "url": "videos/mirage/smoke_ct_topmid.mp4" }
+        ]
+      },
+      "molotovs": {
+        "T": [
+          { "title": "Molotov Default", "url": "videos/mirage/molotov_t_default.mp4" }
+        ],
+        "CT": [
+          { "title": "Molotov B Apartments", "url": "videos/mirage/molotov_ct_bapps.mp4" }
+        ]
+      },
+      "flashes": {
+        "T": [
+          { "title": "Flash Connector", "url": "videos/mirage/flash_t_connector.mp4" }
+        ],
+        "CT": [
+          { "title": "Flash Mid Control", "url": "videos/mirage/flash_ct_mid.mp4" }
+        ]
+      }
+    }
+  }
+  
