@@ -274,13 +274,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let activeSide = "T"; // Côté par défaut
 
-    // Fonction pour transformer un lien YouTube en lien embed
-    const transformToEmbedLink = (url) => {
-        const youtubeRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
-        const match = url.match(youtubeRegex);
-        return match ? `https://www.youtube.com/embed/${match[1]}` : null;
-    };
-
     // Fonction pour créer une carte vidéo
     const createVideoCard = ({ title, link }) => {
         const videoCard = document.createElement("div");
@@ -331,27 +324,6 @@ document.addEventListener("DOMContentLoaded", () => {
             videosContainer.appendChild(createVideoCard(video));
         });
     });
-
-    // Ajouter une nouvelle vidéo
-    const setupAddVideoFeature = () => {
-        const addVideoButton = document.createElement("button");
-        addVideoButton.textContent = "Ajouter une vidéo";
-        addVideoButton.className = "btn";
-        videosContainer.parentNode.insertBefore(addVideoButton, videosContainer);
-
-        addVideoButton.addEventListener("click", () => {
-            const title = prompt("Entrez le titre de la vidéo :").trim();
-            const link = prompt("Entrez le lien YouTube de la vidéo :").trim();
-            const embedLink = transformToEmbedLink(link);
-
-            if (title && embedLink) {
-                videosData[currentMap][activeSide].push({ title, link: embedLink });
-                loadVideos();
-            } else {
-                alert("Le titre et un lien YouTube valide sont obligatoires !");
-            }
-        });
-    };
 
     // Initialisation
     const initialize = () => {
