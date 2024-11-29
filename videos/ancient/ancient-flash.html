@@ -9,30 +9,26 @@
 <body data-map="AncientFlash">
     <header>
         <nav>
-            <a href="../../index.html" class="logo">CS2 Stuffs</a>
+            <h1>Ancient-Flash</h1> <!-- Titre affiché, non cliquable -->
             <ul class="nav-links">
-                <li><a href="../../maps/ancient.html">Home</a></li>
+                <li><a href="../../maps/ancient.html" class="nav-link">Home</a></li>
+                <li><button id="btn-t-side" class="nav-btn">Côté T</button></li>
+                <li><button id="btn-ct-side" class="nav-btn">Côté CT</button></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="stuff-section">
-            <div class="stuff-controls">
-                <button id="btn-t-side" class="btn">Côté T</button>
-                <button id="btn-ct-side" class="btn">Côté CT</button>
-            </div>
-            <section class="search-section">
-                <input
-                    type="text"
-                    id="search-bar"
-                    placeholder="Recherchez un stuff (ex : Jungle, Connector)..."
-                    class="search-input"
-                />
-            </section>
-            <div id="videos-container" class="videos-container">
-                <!-- Videos will be dynamically loaded here -->
-            </div>
+        <section class="search-section">
+            <input
+                type="text"
+                id="search-bar"
+                placeholder="Recherchez un stuff (ex : Jungle, Connector)..."
+                class="search-input"
+            />
+        </section>
+        <section id="videos-container" class="videos-container">
+            <!-- Les vidéos seront chargées dynamiquement ici -->
         </section>
     </main>
 

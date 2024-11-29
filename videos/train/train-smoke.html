@@ -9,20 +9,16 @@
 <body data-map="TrainSmoke">
     <header>
         <nav>
-            <a href="../../index.html" class="logo">CS2 Stuffs</a>
+            <h1>Train-Smokes</h1> <!-- Titre affiché, non cliquable -->
             <ul class="nav-links">
-                <li><a href="../../maps/train.html">Home</a></li>
+                <li><a href="../../maps/train.html" class="nav-link">Home</a></li>
+                <li><button id="btn-t-side" class="nav-btn">Côté T</button></li>
+                <li><button id="btn-ct-side" class="nav-btn">Côté CT</button></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="stuff-section">
-            <div class="stuff-controls">
-                <button id="btn-t-side" class="btn">Côté T</button>
-                <button id="btn-ct-side" class="btn">Côté CT</button>
-            </div>
-        </section>
         <section class="search-section">
             <input
                 type="text"
@@ -34,7 +30,6 @@
         <section id="videos-container" class="videos-container">
             <!-- Les vidéos seront chargées dynamiquement ici -->
         </section>
-        
     </main>
 
     <footer>

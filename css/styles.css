@@ -5,8 +5,8 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    color: #1b262c;
-    background-color: #f5f5f5;
+    color: #333;
+    background-color: #f9f9f9;
     line-height: 1.6;
 }
 
@@ -14,15 +14,19 @@ body {
 /* Header */
 header {
     display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    height: 100px; /* Hauteur fixe pour mieux gérer le centrage */
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
     background: linear-gradient(135deg, #1b262c, #3282b8);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 /* Logo */
 header .logo {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
     color: white;
     text-decoration: none;
@@ -42,18 +46,20 @@ header {
     padding: 10px 20px;
 }
 
+/* Centrer uniquement le titre dans la navigation */
 nav h1 {
-    display: inline-block;
-    margin-right: 20px;
+    margin: 0; /* Supprime les marges par défaut */
     font-size: 24px;
+    text-align: center;
+    flex-grow: 1; /* Permet au titre de prendre l'espace central */
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     align-items: center;
+    gap: 1.5rem;
     margin: 0;
-    padding: 0;
 }
 
 .nav-links li {
@@ -121,19 +127,27 @@ nav h1 {
 .card {
     background: white;
     padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 300px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
 .card h2 {
     color: #3282b8;
     margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
 
 .card p {
     margin-bottom: 1.5rem;
+    color: #666;
 }
 
 .card .btn {
@@ -141,12 +155,14 @@ nav h1 {
     background-color: #3282b8;
     color: white;
     padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .card .btn:hover {
     background-color: #1b262c;
+    transform: scale(1.05);
 }
 
 /* Conteneur des vidéos */
@@ -312,6 +328,27 @@ video {
 .search-input:focus {
     box-shadow: 0 0 8px rgba(50, 130, 184, 0.8);
     border-color: #3282b8;
+}
+
+/* Styles par défaut */
+body.default-theme {
+    background-color: #ffffff;
+    color: #000000;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Styles pour le côté CT */
+body.ct-theme {
+    background-color: #103b8a;
+    color: #df0a0a;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Styles pour le côté T */
+body.t-theme {
+    background-color: #e29d09;
+    color: #df0a0a;
+    transition: all 0.3s ease-in-out;
 }
 
 
