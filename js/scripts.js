@@ -330,7 +330,6 @@ btnT.addEventListener("click", () => {
     loadVideos();
     updateButtonStyles();
     updatePageTheme();
-    displayEasterEgg("T"); // Afficher l'easter egg pour CT
 });
 
 btnCT.addEventListener("click", () => {
@@ -338,7 +337,6 @@ btnCT.addEventListener("click", () => {
     loadVideos();
     updateButtonStyles();
     updatePageTheme();
-    displayEasterEgg("CT"); // Afficher l'easter egg pour CT
 });
 
 
@@ -354,89 +352,6 @@ btnCT.addEventListener("click", () => {
             videosContainer.appendChild(createVideoCard(video));
         });
     });
-
-    const playerPhotos = {
-        T: [
-            { name: "Player T1", photo: "../../images/mirage_2.webp" },
-            { name: "Player T2", photo: "../../images/ancient_2.webp" },
-            { name: "Player T3", photo: "../../images/inferno_2.webp" },
-        ],
-        CT: [
-            { name: "Player CT1", photo: "../../images/dust2_2.webp" },
-            { name: "Player CT2", photo: "../../images/train_2.webp" },
-            { name: "Player CT3", photo: "../../images/vertigo_2.webp" },
-        ],
-    };
-
-    // Fonction pour générer une position aléatoire dans les limites de la fenêtre
-const getRandomPosition = (element) => {
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-    const elementWidth = element.offsetWidth;
-    const elementHeight = element.offsetHeight;
-
-    const randomX = Math.random() * (windowWidth - elementWidth);
-    const randomY = Math.random() * (windowHeight - elementHeight);
-
-    return { x: randomX, y: randomY };
-};
-
-// Fonction pour choisir un coin aléatoire et positionner l'easter egg
-const getRandomCornerPosition = () => {
-    // Choix aléatoire parmi les coins : "top-left", "top-right", "bottom-left", "bottom-right"
-    const corners = ["top-left", "top-right", "bottom-left", "bottom-right"];
-    const randomCorner = corners[Math.floor(Math.random() * corners.length)];
-
-    // Coordonnées spécifiques pour chaque coin
-    switch (randomCorner) {
-        case "top-left":
-            return { x: 10, y: 10 }; // Coin supérieur gauche
-        case "top-right":
-            return { x: window.innerWidth - 160, y: 10 }; // Coin supérieur droit
-        case "bottom-left":
-            return { x: 10, y: window.innerHeight - 200 }; // Coin inférieur gauche
-        case "bottom-right":
-            return { x: window.innerWidth - 160, y: window.innerHeight - 200 }; // Coin inférieur droit
-        default:
-            return { x: 10, y: 10 }; // Par défaut, coin supérieur gauche
-    }
-};
-
-// Mise à jour de la fonction displayEasterEgg
-const displayEasterEgg = (side) => {
-    // Sélection d'une image aléatoire pour le côté donné (T ou CT)
-    const randomIndex = Math.floor(Math.random() * playerPhotos[side].length);
-    const selectedPhoto = playerPhotos[side][randomIndex];
-
-    // Création ou sélection de l'élément pour l'easter egg
-    let easterEggElement = document.getElementById("easter-egg");
-    if (!easterEggElement) {
-        easterEggElement = document.createElement("div");
-        easterEggElement.id = "easter-egg";
-        easterEggElement.style.position = "absolute";
-        document.body.appendChild(easterEggElement);
-    }
-
-    // Mise à jour du contenu et du style
-    easterEggElement.innerHTML = `
-        <img src="${selectedPhoto.photo}" alt="${selectedPhoto.name}" style="width: 150px; border-radius: 50%; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);">
-        <p style="text-align: center; color: white; font-size: 14px; margin: 5px 0 0;">${selectedPhoto.name}</p>
-    `;
-    easterEggElement.style.zIndex = 1000;
-
-    // Positionnement dans un coin aléatoire
-    const { x, y } = getRandomCornerPosition();
-    easterEggElement.style.left = `${x}px`;
-    easterEggElement.style.top = `${y}px`;
-
-    // Ajout d'une animation d'apparition
-    easterEggElement.style.transition = "opacity 0.5s ease";
-    easterEggElement.style.opacity = "0";
-    setTimeout(() => {
-        easterEggElement.style.opacity = "1";
-    }, 10);
-};
-
 
     const initialize = () => {
         document.body.classList.add("default-theme"); // Thème par défaut au chargement
