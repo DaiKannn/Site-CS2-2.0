@@ -4,10 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const videosContainer = document.getElementById("videos-container");
     const searchBar = document.getElementById("search-bar");
 
-    // Détection dynamique de la map en fonction de l'ID du body ou d'un attribut HTML
+    // Détection dynamique de la map
     const currentMap = document.body.dataset.map || "Dust2"; // Ex. : ajoutez data-map="Inferno" dans la balise <body>
 
-    // Données des vidéos
+    // Données des vidéos avec des liens YouTube
     const videosData = {
         AncientSmoke: {
             T: [
@@ -54,19 +54,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
         MirageSmoke: {
             T: [
-                { title: "Test4 Smoke", link: "https://www.youtube.com/embed/EXAMPLE5" },
-                { title: "Test4 Spawn Smoke", link: "https://www.youtube.com/embed/EXAMPLE6" },
+                { title: "Smoke Bas-Stairs", link: "https://www.youtube.com/watch?v=I2bhzCkoe-w" },
+                { title: "Smoke Connector", link: "https://www.youtube.com/watch?v=jgkMfKjcIto" },
+                { title: "Smoke CT", link: "https://www.youtube.com/watch?v=PrfCJvigGaY" },
+                { title: "Smoke CT 2", link: "https://www.youtube.com/watch?v=x7j1ZjI23KI" },
+                { title: "Smoke Stairs", link: "https://www.youtube.com/watch?v=eEA2IoVlxgA" },
+                { title: "Smoke Windows", link: "https://www.youtube.com/watch?v=cTAzQDmK4eY" },
+                { title: "Smoke Stairs&Jgl", link: "https://www.youtube.com/watch?v=k6dmSY6WNB8" },
             ],
             CT: [
-                { title: "Test4 Site Smoke", link: "https://www.youtube.com/embed/EXAMPLE7" },
-                { title: "Test4 Smoke", link: "https://www.youtube.com/embed/EXAMPLE8" },
+                { title: "Smoke Ramp", link: "https://www.youtube.com/watch?v=tc-Uh-n0g_E" },
+                { title: "Smoke Ramp 2", link: "https://www.youtube.com/watch?v=iccR2d8z7ZQ" },
             ],
         },
 
         NukeSmoke: {
             T: [
-                { title: "Outside Smoke", link: "https://www.youtube.com/embed/EXAMPLE5" },
-                { title: "Test3 Spawn Smoke", link: "https://www.youtube.com/embed/EXAMPLE6" },
+                { title: "Mur de smoke solo", link: "https://www.youtube.com/watch?v=cqXXA3MZ67k" },
+                { title: "Mur de smoke solo 2", link: "https://www.youtube.com/watch?v=IoOLsx6n4nk" },
+                { title: "Smoke outside 2", link: "https://www.youtube.com/watch?v=nRLpWVSDr80" },
+                { title: "Smoke outside 3", link: "https://www.youtube.com/watch?v=g8mY_qVlRgA" },
+                { title: "Smoke lurk porte", link: "https://www.youtube.com/watch?v=XL90O01QmtY" },
+                { title: "Smoke Vestiaires", link: "https://www.youtube.com/watch?v=_N9O9-T2DU4" },
             ],
             CT: [
                 { title: "Test3 Site Smoke", link: "https://www.youtube.com/embed/EXAMPLE7" },
@@ -141,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         MirageMolotov: {
             T: [
-                { title: "Car Molotov", link: "https://www.youtube.com/embed/EXAMPLE19" },
+                { title: "Molo Sandwitch", link: "https://www.youtube.com/watch?v=NI8nnqZOQJk" },
                 { title: "B Backsite Molotov", link: "https://www.youtube.com/embed/EXAMPLE20" },
             ],
             CT: [
@@ -152,8 +161,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         NukeMolotov: {
             T: [
-                { title: "Car Molotov", link: "https://www.youtube.com/embed/EXAMPLE19" },
-                { title: "B Backsite Molotov", link: "https://www.youtube.com/embed/EXAMPLE20" },
+                { title: "Molo Back site A", link: "https://www.youtube.com/watch?v=ywsTDiGD0iQ" },
+                { title: "Molo Hut", link: "https://www.youtube.com/watch?v=bs_qZOn5UXI" },
             ],
             CT: [
                 { title: "Car Molotov", link: "https://www.youtube.com/embed/EXAMPLE19" },
@@ -228,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         MirageFlash: {
             T: [
-                { title: "A Long Flash", link: "https://www.youtube.com/embed/EXAMPLE21" },
+                { title: "Flash Antenne", link: "https://www.youtube.com/watch?v=PdfahccvGw0" },
                 { title: "Mid to B Flash", link: "https://www.youtube.com/embed/EXAMPLE22" },
             ],
             CT: [
@@ -239,11 +248,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         NukeFlash: {
             T: [
-                { title: "A Long Flash", link: "https://www.youtube.com/embed/EXAMPLE21" },
-                { title: "Mid to B Flash", link: "https://www.youtube.com/embed/EXAMPLE22" },
+                { title: "Flash INT", link: "https://www.youtube.com/watch?v=sCzsHWmAmhM" },
+                { title: "Flash Ramp", link: "https://www.youtube.com/watch?v=WO2rSEXUA1U" },
             ],
             CT: [
-                { title: "Mid Flash", link: "https://www.youtube.com/embed/EXAMPLE27" },
+                { title: "Flash Retake", link: "https://www.youtube.com/watch?v=1iGWXEjijkM" },
                 { title: "A Ramp Flash", link: "https://www.youtube.com/embed/EXAMPLE28" },
             ],
         },
@@ -269,17 +278,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 { title: "A Ramp Flash", link: "https://www.youtube.com/embed/EXAMPLE28" },
             ],
         },
-
     };
 
     let activeSide = "T"; // Côté par défaut
 
+    // Fonction pour convertir un lien YouTube en lien embed
+    const convertToEmbedLink = (link) => {
+        const url = new URL(link);
+        if (url.hostname === "www.youtube.com" && url.searchParams.has("v")) {
+            return `https://www.youtube.com/embed/${url.searchParams.get("v")}`;
+        }
+        return link; // Retourne le lien original si ce n'est pas un lien YouTube valide
+    };
+
     // Fonction pour créer une carte vidéo
     const createVideoCard = ({ title, link }) => {
+        const embedLink = convertToEmbedLink(link);
         const videoCard = document.createElement("div");
         videoCard.className = "video-card";
         videoCard.innerHTML = `
-            <iframe src="${link}" frameborder="0" allowfullscreen></iframe>
+            <iframe src="${embedLink}" frameborder="0" allowfullscreen></iframe>
             <h3>${title}</h3>
         `;
         return videoCard;
@@ -288,7 +306,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Charger les vidéos pour le côté actif
     const loadVideos = () => {
         videosContainer.innerHTML = ""; // Réinitialise le conteneur
-        const videos = videosData[currentMap][activeSide];
+        const videos = videosData[currentMap]?.[activeSide] || [];
         videos.forEach((video) => {
             videosContainer.appendChild(createVideoCard(video));
         });
@@ -300,7 +318,8 @@ document.addEventListener("DOMContentLoaded", () => {
         btnCT.classList.toggle("active", activeSide === "CT");
     };
 
-    // Événements pour changer de côté
+
+    // Gestion des événements de clic
     btnT.addEventListener("click", () => {
         activeSide = "T";
         loadVideos();
@@ -313,53 +332,24 @@ document.addEventListener("DOMContentLoaded", () => {
         updateButtonStyles();
     });
 
-    // Fonction pour mettre à jour le thème de la page
-const updatePageTheme = () => {
-    document.body.classList.remove("default-theme", "t-theme", "ct-theme");
-
-    if (activeSide === "CT") {
-        document.body.classList.add("ct-theme");
-    } else if (activeSide === "T") {
-        document.body.classList.add("t-theme");
-    }
-};
-
-// Ajoutez l'appel à updatePageTheme dans les événements de clic des boutons
-btnT.addEventListener("click", () => {
-    activeSide = "T";
-    loadVideos();
-    updateButtonStyles();
-    updatePageTheme();
-});
-
-btnCT.addEventListener("click", () => {
-    activeSide = "CT";
-    loadVideos();
-    updateButtonStyles();
-    updatePageTheme();
-});
-
-
-
     // Barre de recherche dynamique
     searchBar.addEventListener("input", (event) => {
         const query = event.target.value.toLowerCase();
-        const filteredVideos = videosData[currentMap][activeSide].filter((video) =>
+        const filteredVideos = videosData[currentMap]?.[activeSide]?.filter((video) =>
             video.title.toLowerCase().includes(query)
-        );
+        ) || [];
         videosContainer.innerHTML = ""; // Réinitialise
         filteredVideos.forEach((video) => {
             videosContainer.appendChild(createVideoCard(video));
         });
     });
 
+    // Initialisation
     const initialize = () => {
         document.body.classList.add("default-theme"); // Thème par défaut au chargement
         loadVideos();
         updateButtonStyles();
-        setupAddVideoFeature();
     };
-
 
     initialize();
 });

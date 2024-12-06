@@ -167,11 +167,12 @@ nav h1 {
 
 /* Conteneur des vidéos */
 .videos-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 1 ou 2 colonnes selon la largeur de l'écran */
+    gap: 20px; /* Espace entre les vidéos */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centre la grille sur la page */
 }
 
 .video-card {
@@ -328,27 +329,6 @@ video {
 .search-input:focus {
     box-shadow: 0 0 8px rgba(50, 130, 184, 0.8);
     border-color: #3282b8;
-}
-
-/* Styles par défaut */
-body.default-theme {
-    background-color: #ffffff;
-    color: #000000;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Styles pour le côté CT */
-body.ct-theme {
-    background-color: #103b8a;
-    color: #df0a0a;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Styles pour le côté T */
-body.t-theme {
-    background-color: #e29d09;
-    color: #df0a0a;
-    transition: all 0.3s ease-in-out;
 }
 
 
