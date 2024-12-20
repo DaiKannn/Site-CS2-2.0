@@ -43,8 +43,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
         InfernoSmoke: {
             T: [
-                { title: "Banana Smoke", link: "https://www.youtube.com/embed/EXAMPLE5" },
-                { title: "CT Spawn Smoke", link: "https://www.youtube.com/embed/EXAMPLE6" },
+                { title: "Smoke Coffin", link: "https://www.youtube.com/watch?v=-JMG9iX2MCs" },
+                { title: "Smoke Coffin 2", link: "https://www.youtube.com/watch?v=Bs_RfGSLibM" },
+                { title: "Smoke CT", link: "https://www.youtube.com/watch?v=oDHo5AZ24Rk" },
+                { title: "Smoke CT 2", link: "https://www.youtube.com/watch?v=_Ajromt50Kg" },
+                { title: "Smoke Librairie", link: "https://www.youtube.com/watch?v=hCF1bpObfyU" },
+                { title: "Smoke Librairie 2", link: "https://www.youtube.com/watch?v=sAEddB8Ss1A" },
+                { title: "Smoke Arche", link: "https://www.youtube.com/watch?v=dPnOSffRFXU" },
+                { title: "Smoke CT", link: "https://www.youtube.com/watch?v=oDHo5AZ24Rk" },
+                { title: "Smoke Long", link: "https://www.youtube.com/watch?v=brdi7e9LpIQ" },
+                { title: "Smoke Long 2", link: "https://www.youtube.com/watch?v=abka0dkraAQ" },
+                { title: "Smoke Long Profonde", link: "https://www.youtube.com/watch?v=jR6LXN6g3jA" },
+                { title: "Smoke Plaine", link: "https://www.youtube.com/watch?v=VDrZf3hlc90" },
+                { title: "Smoke Plaine 2", link: "https://www.youtube.com/watch?v=D5FyOx2-6hM" },
+                { title: "Smoke Plaine 3", link: "https://www.youtube.com/watch?v=jpbdajMXVTI" },
+                { title: "Smoke Lurk Apps", link: "https://www.youtube.com/watch?v=LeS58n_ueFY" },
             ],
             CT: [
                 { title: "A Site Smoke", link: "https://www.youtube.com/embed/EXAMPLE7" },
@@ -139,12 +152,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         InfernoMolotov: {
             T: [
-                { title: "Car Molotov", link: "https://www.youtube.com/embed/EXAMPLE19" },
-                { title: "B Backsite Molotov", link: "https://www.youtube.com/embed/EXAMPLE20" },
+                { title: "Molo C1", link: "https://www.youtube.com/watch?v=cagpmU74Yi8" },
+                { title: "Molo C3", link: "https://www.youtube.com/watch?v=qIgTsaQqUjg" },
+                { title: "Molo C3 2", link: "https://www.youtube.com/watch?v=MrobKxoPM1M" },
+                { title: "Molo Dark", link: "https://www.youtube.com/watch?v=Iv5M5xQChgE" },
+                { title: "Molo Fallen", link: "https://www.youtube.com/watch?v=1CnawmBHnmE" },
+                { title: "Molo Pitt", link: "https://www.youtube.com/watch?v=dIbH1AjARcg" },
+                { title: "Molo SandBag", link: "https://www.youtube.com/watch?v=s3PL3Gtop24" },
             ],
             CT: [
-                { title: "Car Molotov", link: "https://www.youtube.com/embed/EXAMPLE19" },
-                { title: "B Backsite Molotov", link: "https://www.youtube.com/embed/EXAMPLE20" },
+                { title: "Molo Backsite A", link: "https://www.youtube.com/watch?v=txI9i5xaOks" },
+                { title: "Molo fond banane", link: "https://www.youtube.com/watch?v=0AvucD0MF8E" },
             ],
         },
 
@@ -226,12 +244,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         InfernoFlash: {
             T: [
-                { title: "A Long Flash", link: "https://www.youtube.com/embed/EXAMPLE21" },
-                { title: "Mid to B Flash", link: "https://www.youtube.com/embed/EXAMPLE22" },
+                { title: "Flash T", link: "https://www.youtube.com/watch?v=bIbhBHCvfLU" },
+                { title: "Flash Muret", link: "https://www.youtube.com/watch?v=0oyKpuEAeBI" },
+                { title: "Flash Site", link: "https://www.youtube.com/watch?v=VjXLwvK-7qE" },
+                { title: "Flash Muret", link: "https://www.youtube.com/watch?v=0oyKpuEAeBI" },
             ],
             CT: [
-                { title: "Mid Flash", link: "https://www.youtube.com/embed/EXAMPLE27" },
-                { title: "A Ramp Flash", link: "https://www.youtube.com/embed/EXAMPLE28" },
+                { title: "Flash Retake Car", link: "https://www.youtube.com/watch?v=KW7K93tTK5c" },
+                { title: "Flash C1", link: "https://www.youtube.com/watch?v=h3U7PkjyaqI" },
             ],
         },
 
